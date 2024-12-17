@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAH Bakers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="img folder/logo.jpg" alt="SHAH Bakers Logo" class="logo-img" radius="400px">
+                </div>
+                <h1>SHAH Bakers</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#special-offers" class="nav-link">Special Offers</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <form id="search-form" action="products.html" method="get">
+                            <input type="text" id="search" name="search" placeholder="Search Products...">
+                            <button type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="scroll-reveal">
+        <div class="container">
+            <h2>Welcome to SHAH Bakers</h2>
+            <p>Your one-step shop for delicious baked goods.</p>
+            <p>Our Bakery Items Are Famous World Wide</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="scroll-reveal">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We provide the finest quality baked goods, fresh from our ovens every day.</p>
+            <p>Our Products Are 100% Hygienic</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="scroll-reveal">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <a href="order.html?product=bread">
+                        <img src="img folder/bread.jpg" alt="Bread" width="400px" height="204px">
+                        <h3>Fresh Bread</h3>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <p class="review">"Best bread I’ve had in years!" - John</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="order.html?product=cake">
+                        <img src="img folder/cake.jpg" alt="Cake" width="400px" height="204px">
+                        <h3>Delicious Cakes</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="review">"Absolutely loved the cake!" - Sarah</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="order.html?product=cookies">
+                        <img src="img folder/cookie .jpg" alt="Cookies" width="400px" height="204px">
+                        <h3>Homemade Cookies</h3>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <p class="review">"Great flavor, perfect texture." - Alex</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="order.html?product=pastries">
+                        <img src="img folder/pastries.jpeg" alt="Pastries" width="400px" height="204px">
+                        <h3>Delightful Pastries</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="review">"Amazing pastries, so fresh!" - Emily</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="order.html?product=nimcos">
+                        <img src="img folder/nimcos.jpeg" alt="Nimcos" width="400px" height="204px">
+                        <h3>Crispy Nimcos</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p class="review">"Perfect crunch and flavor." - Jake</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="special-offers" class="scroll-reveal">
+        <div class="container">
+            <h2>Special Offers</h2>
+            <div class="offers-list">
+                <div class="offer-item">
+                    <h3>Buy One Get One Free</h3>
+                    <p>Get two cakes for the price of one! Limited time offer.</p>
+                </div>
+                <div class="offer-item">
+                    <h3>20% Off on All Pastries</h3>
+                    <p>Enjoy a sweet discount on all our pastries. Don't miss out!</p>
+                </div>
+                <div class="offer-item">
+                    <h3>Free Delivery on Orders Over $50</h3>
+                    <p>Get your favorite baked goods delivered to your doorstep for free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="scroll-reveal">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SHAH Bakers. All rights reserved.</p>
+            <p>For any Problem Please contact us: 03153040594</p>
+            <p>OR email us: ismailalishah2007@gmail.com</p>
+            <h4>Owner: Ismail Shah</h4>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

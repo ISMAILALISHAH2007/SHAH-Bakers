@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Your Order</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* Header Styles */
+header {
+    background-color: #ff8c00;
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Main Content Styles */
+#main-content {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.order-button {
+    display: inline-block;
+    background-color: #ff8c00;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #e07c00;
+}
+
+/* Order Section Styles */
+#order {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.order-card {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#product-info {
+    margin-bottom: 20px;
+}
+
+#product-info h3 {
+    color: #ff8c00;
+}
+
+#product-info p {
+    color: #555;
+    font-size: 16px;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.order-form label {
+    font-size: 16px;
+    color: #333;
+}
+
+.order-form input {
+    padding: 12px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.order-button {
+    background-color: #ff8c00;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #e07c00;
+}
+
+/* Enhanced Go Home Button Styles */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.go-home-btn {
+    display: inline-block;
+    background-color: #ff8c00;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.go-home-btn:hover {
+    background-color: #e07c00;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .order-card {
+        padding: 20px;
+    }
+
+    .order-form input {
+        max-width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <h1>SHAH Bakers</h1>
+        </div>
+    </header>
+
+    <!-- Order Section -->
+    <section id="order" class="scroll-reveal">
+        <div class="container">
+            <h2>Confirm Your Order</h2>
+            <div class="order-card">
+                <div id="product-info" class="product-info">
+                    <h3>Product: <span id="product-name">Cake</span></h3>
+                    <p id="product-description">Please confirm the details of your order for a delicious cake!</p>
+                </div>
+                <!-- Order Form -->
+                <form id="order-form" class="order-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" required min="1" placeholder="Enter quantity">
+
+                    <button type="submit" class="order-button">Confirm Order</button>
+                </form>
+            </div>
+
+            <!-- Go Home Button -->
+            <div class="button-container">
+                <a href="index.html" class="go-home-btn">Go Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Wonderful Bakery. All rights reserved.</p>
+            <p>For any Problem Please contact us : 03153040594</p>
+            <p>OR email us : ismailalishah2007@gmail.com</p>
+            <h4>Owner: Ismail Shah</h4>
+
+        </div>
+    </footer>
+
+    <script >
+      // Get product from URL (for Order page)
+const urlParams = new URLSearchParams(window.location.search);
+const product = urlParams.get('product'); // This will give 'bread', 'cake', or 'cookies'
+
+const productName = document.getElementById('product-name');
+const productDescription = document.getElementById('product-description');
+
+if (product) {
+    if (product === 'cake') {
+        productName.textContent = "Cake";
+        productDescription.textContent = "Please confirm the details of your order for a delicious cake!";
+    } else if (product === 'bread') {
+        productName.textContent = "Bread";
+        productDescription.textContent = "Please confirm the details of your order for freshly baked bread!";
+    } else if (product === 'cookies') {
+        productName.textContent = "Cookies";
+        productDescription.textContent = "Please confirm the details of your order for homemade cookies!";
+    } else if (product === 'pastries') {
+        productName.textContent = "Pastries";
+        productDescription.textContent = "Please confirm the details of your order for freshly baked pastries!";
+    } else if (product === 'nimcos') {
+        productName.textContent ="nimcos";
+        productDescription.textContent = "Please confirm the details of your order for freshly baked nimcos!";
+    } else {
+        productName.textContent = "Product Not Found";
+        productDescription.textContent = "Sorry, we couldn't find the product you're looking for.";
+    }
+}
+
+
+    </script>
+</body>
+</html>

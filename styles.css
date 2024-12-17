@@ -1,0 +1,254 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* Header Styles */
+header {
+    background-color: #ff8c00;
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .header-content {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    margin-right: 15px;
+}
+
+header .logo-img {
+    width: 100px; /* Increased logo size */
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em; /* Adjusted font size for the title */
+}
+
+/* Navigation Bar */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Section Styles */
+section {
+    padding: 60px 0;
+}
+
+.product-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit; /* Ensures text color remains the same */
+}
+
+.product-item a:hover {
+    opacity: 0.8; /* Adds hover effect */
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #e07c00;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Scroll Reveal Animation */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* New Styles for Ratings/Reviews */
+.product-item .rating {
+    font-size: 1.2em;
+    color: gold;
+}
+
+.product-item .review {
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Search Bar Styling */
+#search-form {
+    display: inline-block;
+}
+
+#search-form input {
+    padding: 8px;
+    font-size: 14px;
+}
+
+#search-form button {
+    padding: 8px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#search-form button:hover {
+    background-color: #e07c00;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    header .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        display: block;
+        text-align: left;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .product-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-item {
+        width: 80%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    #search-form input, #search-form button {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+/* Additional Mobile Optimization for smaller screens */
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+
+    .product-item {
+        width: 100%;
+    }
+
+    .product-item img {
+        max-width: 100%;
+    }
+}

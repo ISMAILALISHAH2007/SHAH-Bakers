@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Wonderful Bakery</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #ff8c00;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Product Section */
+        .product-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px 0;
+        }
+
+        .product-item {
+            text-align: center;
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .product-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-item h3 {
+            color: #ff8c00;
+        }
+
+        .product-item p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .product-item button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-item button:hover {
+            background-color: #e07c00;
+        }
+
+        /* Search Filter */
+        .search-box {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-box input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Order Form Modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background-color: #e07c00;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .go-home-btn {
+            display: inline-block;
+            background-color: #ff8c00;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .go-home-btn:hover {
+            background-color: #e07c00;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>SHAH Bakers</h1>
+    </header>
+
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search for products..." onkeyup="filterProducts()">
+    </div>
+
+    <!-- Product List -->
+    <div class="container">
+        <div class="button-container" style="text-align: center;">
+            <a href="index.html" class="go-home-btn">Go Back to Home</a>
+        </div>
+        <h2>Our Products</h2>
+        <div class="product-list" id="product-list">
+            <!-- Product Items -->
+            <div class="product-item" data-name="cake">
+                <img src="img folder/cake.jpg" alt="Cake"width="400px" height="204px">
+                <h3>Cake</h3>
+                <p>Delicious, freshly baked cakes with a variety of flavors!</p>
+                <button onclick="openOrderForm('Cake')">Order Now</button>
+            </div>
+            <div class="product-item" data-name="bread">
+                <img src="img folder/bread.jpg" alt="Bread"width="400px" height="204px">
+                <h3>Bread</h3>
+                <p>Freshly baked bread perfect for any meal!</p>
+                <button onclick="openOrderForm('Bread')">Order Now</button>
+            </div>
+            <div class="product-item" data-name="cookies">
+                <img src="img folder/cookie .jpg" alt="Cookies"width="400px" height="204px">
+                <h3>Cookies</h3>
+                <p>Homemade cookies with a crisp and soft texture!</p>
+                <button onclick="openOrderForm('Cookies')">Order Now</button>
+            </div>
+            <div class="product-item" data-name="pastries">
+                <img src="img folder/pastries.jpeg" alt="Pastries"width="400px" height="204px">
+                <h3>Pastries</h3>
+                <p>Delightful pastries baked to perfection!</p>
+                <button onclick="openOrderForm('Pastries')">Order Now</button>
+            </div>
+            <div class="product-item" data-name="nimcos">
+                <img src="img folder/nimcos.jpeg" alt="Nimcos"width="400px" height="204px">
+                <h3>Nimcos</h3>
+                <p>Crispy and crunchy nimcos, a perfect snack!</p>
+                <button onclick="openOrderForm('Nimcos')">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderForm()">&times;</span>
+            <form id="order-form">
+                <h2 id="order-form-title">Order Form</h2>
+                <input type="text" id="name" name="name" placeholder="Your Name">
+                <input type="email" id="email" name="email" placeholder="Your Email">
+                <input type="number" id="quantity" name="quantity" placeholder="Quantity" min="1">
+                <button type="submit">Confirm Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Wonderful Bakery. All rights reserved.</p>
+        <p>For any problem please contact us: 03153040594</p>
+        <p>Or email us: ismailalishah2007@gmail.com</p>
+        <h4>Owner: Ismail Shah</h4>
+    </footer>
+
+    <script>
+        // Search Filter Functionality
+        function filterProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const productItems = document.querySelectorAll('.product-item');
+
+            productItems.forEach(item => {
+                const productName = item.getAttribute('data-name');
+                if (productName.toLowerCase().includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Get product from URL (for highlighting specific product)
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('search'); // Grabs the search query from URL, e.g., ?search=cake
+
+        if (product) {
+            const productItems = document.querySelectorAll('.product-item');
+            productItems.forEach(item => {
+                if (item.getAttribute('data-name') === product.toLowerCase()) {
+                    item.style.border = '2px solid #ff8c00'; // Highlight the selected product
+                }
+            });
+        }
+
+        // Order Form Modal
+        const modal = document.getElementById("orderModal");
+
+        function openOrderForm(product) {
+            document.getElementById("order-form-title").textContent = `Order Form - ${product}`;
+            modal.style.display = "block";
+        }
+
+        function closeOrderForm() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Handle order form submission
+        document.getElementById("order-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Implement order submission logic here
+            alert("Order placed successfully!");
+            closeOrderForm();
+        });
+    </script>
+
+</body>
+</html>
